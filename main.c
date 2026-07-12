@@ -1,5 +1,16 @@
-#include<stdio.h>
+#include"main.h"
+#include"token.h"
+char *key[] =
+{
+    "auto", "break", "case", "char", "const", "continue",
+    "default", "do", "double", "else", "enum", "extern",
+    "float", "for", "goto", "if", "int", "long",
+    "register", "return", "short", "signed", "sizeof",
+    "static", "struct", "switch", "typedef", "union",
+    "unsigned", "void", "volatile", "while"
+};
 
+int number_flag;
 int main(int argc, char *argv[])
 {
 	struct files file;
@@ -54,9 +65,9 @@ int s_2_h(struct files *file)
 	{
 		switch(ch)
 		{
-			case ''' : write_char(ch,file);
+			case '\'' : write_char(ch,file);
 				   break;
-			case '"' : write_string(ch,file);
+			case '\"' : write_string(ch,file);
 				   break;
 			case '/' : char next=fgetc(file->f_in);
 				   switch(next)

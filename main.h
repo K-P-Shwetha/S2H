@@ -1,8 +1,10 @@
 #ifndef MAIN
 #define MAIN
 
-#define TRUE 1;
-#define FLASE 0;
+#include<stdio.h>
+#include<string.h>
+#define TRUE 1
+#define FALSE 0
 struct files
 {
 	char *input;
@@ -10,6 +12,8 @@ struct files
 	FILE *f_in;
 	FILE *f_out;
 };
-int number_flag;
-int check_arg( char * , struct files *);
-void open_files(struct files *file);
+extern char *key[];
+void is_identifier(int ,struct files *);
+int s_2_h(struct files *);
+int open_files(struct files *);
+#endif
